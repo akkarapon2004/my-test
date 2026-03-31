@@ -1,0 +1,98 @@
+.skill-container {
+    display: flex;
+    flex-direction: column;
+}
+.s_content {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 600px;
+    width: 100%;
+    gap: 10px;
+}
+.t_text {
+    font-size: 40px;
+    font-weight: bold;
+    padding: 0;
+    margin: 0;
+    margin-left: 30px;
+    margin-bottom: 30px;
+}
+.skill-item {
+    display: flex;
+    align-items: flex-end;
+    padding: 10px;
+    margin: 10px;
+    gap: 5px;
+    width: 40%;
+
+    transition: 1s;
+}
+.skill-item img{
+    width: 70px;
+    height: 70px;
+}
+.progress-bar-bg {
+    width: 100%;
+    background-color: rgb(211, 211, 211);
+    height: 10px;
+    border-radius: 20px;
+    overflow: hidden;
+}
+.close.show .progress-bar-fill {
+    width: 0%; /* เริ่มต้นที่ 0 */
+    height: 100%;
+    background-image: linear-gradient(to right, #6a11cb 0%, #2575fc 100%);
+    animation: slideIn 1.5s ease-out forwards;
+}
+
+@keyframes slideIn {
+    from {
+        width: 0%;
+    }
+    to {
+        width: var(--target-width);
+    }
+}
+body.dark .skill-item {
+    
+}
+@media (max-width: 820px) {
+    .skill-container {
+        align-items: center;
+        justify-content: center;
+    }
+    .t_text {
+        padding: 0;
+        margin: 0;
+        margin-bottom: 30px;
+    }
+    .skill-item {
+        padding: 5px;
+        margin: 5px;
+        width: 45%;
+    }
+    .progress-bar-bg {
+        height: 20px;
+    }
+    .s_content {
+        height: 500px;
+    }
+    
+}
+
+@media (max-width: 420px) {
+    .skill-item {
+        
+        width:90%;
+    }
+    .s_content {
+        height: auto;
+    }
+    .progress-bar-bg {
+        height: 30px;
+    }
+    
+}
+

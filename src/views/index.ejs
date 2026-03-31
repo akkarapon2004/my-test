@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playpen+Sans+Thai:wght@100..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/navbar.css">
+    <link rel="stylesheet" href="/css/content_about.css">
+    <link rel="stylesheet" href="/css/content_skill.css"> 
+    <link rel="stylesheet" href="/css/content_work.css"> 
+</head>
+<body>
+    <div class="con" id="top-sentinel">
+        <img src="/image/facebook.png" alt="">
+        <img src="/image/social.png" alt="">
+    </div>
+    <nav>
+            <div class="navbar">
+                <a class="nav-item active" href="#about">เกี่ยวกับผม</a>
+                <a class="nav-item" href="#skill">ความสามารถ</a>
+                <a class="nav-item" href="#work">ผลงาน</a>
+            </div>
+            
+        </nav>
+    <div class="div1">
+        
+        <div class="div2">
+            <div class="title" id="about">
+                
+                <div class="about">
+                    <div class="close pro_left">
+                        
+                            <p style="font-size: 30px; margin: 0; padding: 0;" >สวัสดี, ผมชื่อ</p>
+                            <p class="typewriter">อัครพล กิตติภัทฑ์</p>
+                        
+                        <p>Picto is a single-page personal portfolio website made with Figma. This Portfolio is designed based on extensive UX Research to provide the best experience to your client. You can use our template as a Designer. Developer. Freelancer. Architecture. Ceo. Team Leader. Influencer. Creator. Interior Designer. Handymen. Graphic Designer. Video Editor. Social Media Manager. Online Tutor. Online Recruiter. Email Marketer. Content Writer. SEC Expert. Fashion Designer. Model.</p>
+                        <a class="button_more" href="#skill">คลิกเพื่อดูเพิ่มเติม</a>
+                    </div>
+                    <div class="close pro_right">
+                        <div class="card">
+                                <div class="profile">
+                                    <img src="https://static.naewna.com/uploads/news/source/505439.jpg" alt="">
+                                </div>
+                            
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="title" id="skill">
+                <hr>
+                <div class="skill-container">
+                    <p class="t_text">ความสามารถของผม</p>
+                    <div class="s_content">
+                        <% skills.forEach(function(item) { %>
+                            <div class="close skill-item">
+                            
+                                    <img src="<%= item.img %>" alt="<%= item.img %>">
+                            
+                                    <div class="progress-bar-bg">
+                                        <div class="progress-bar-fill" 
+                                            style="--target-width: <%= item.skill %>%;">
+                                        </div>
+                                    
+                                </div>
+                                
+                            </div>
+                        <% }); %>
+                    </div>
+                    </div>
+
+                <hr>
+            </div>
+            <div class="title" id="work">
+                <% works.forEach(w => { %>
+                    <div>
+                        <button onclick="openModel('model-<%= w.id %>')">ID : <%= w.id %></button>
+                    </div>
+                    <div id="model-<%= w.id %>" class="model">
+                        <div>
+                            <span onclick="closeModel('model-<%= w.id %>')" id="closemodel">&times;</span>
+                            <h1><%= w.content %></h1>
+                            <img src="<%= w.img %>" alt="">
+                        </div>
+                    </div>
+                <% }) %>
+            </div>
+        </div>
+        <div class="social-icon">
+            <img src="/image/facebook.png" alt="">
+            <img src="/image/social.png" alt="">
+        </div>
+        <img id="theme-toggle" src="/image/full-moon.png" alt="sun">
+        
+    </div>
+</body>
+<script>
+    const theme = document.getElementById("theme-toggle");
+
+    theme.addEventListener('click', () => {
+        document.body.classList.toggle('dark');
+        if(document.body.classList.contains('dark')) {
+            theme.src = "/image/day-mode.png";
+        }else{
+            theme.src = "/image/full-moon.png"
+        }
+    })
+
+    const topElement = document.querySelector(".con");
+    const s_icon = document.querySelector(".social-icon");
+
+    const observer = new IntersectionObserver((entries) => {
+        if (!entries[0].isIntersecting) {
+            s_icon.classList.add("show")
+        } else {
+            s_icon.classList.remove("show");
+        }
+    }, {
+        threshold: [0]
+    });
+    observer.observe(topElement);
+
+    const menus = document.querySelectorAll('.nav-item');
+    const title = document.querySelectorAll('.title');
+    window.onscroll = () => {
+        title.forEach(section => {
+            let top = window.scrollY;
+            let offset = section.offsetTop - 200;
+            let id = section.getAttribute('id');
+            
+            if (top >= offset) {
+                menus.forEach(m => m.classList.remove('active'));
+                document.querySelector('.nav-item[href*=' + id + ']').classList.add('active');
+            }
+        })
+    }
+
+    const myCallback = (entries) => {
+        entries.forEach(entry => {
+            var box = entry.target;
+
+            if (entry.isIntersecting) {
+                box.classList.add('show');
+                console.log('1');
+            }else{
+                box.classList.remove('show');
+                console.log('ลบ');
+            }
+        })
+    }
+    var options = {
+        threshold: 0.3
+    };
+
+    var observer2 = new IntersectionObserver(myCallback, options);
+
+    var boxes = document.querySelectorAll('.close');
+    boxes.forEach(box => {
+        observer2.observe(box)
+    })
+
+    const openModel = (modelID) => {
+        const model = document.getElementById(modelID);
+        if (model) {
+            model.style.display = "flex";
+            document.body.classList.add("no-scroll");
+        }
+    }
+    const closeModel = (modelID) => {
+        const model = document.getElementById(modelID);
+        if (model) {
+            model.style.display = "none";
+            document.body.classList.remove("no-scroll");
+        }
+    }
+    window.onclick = (event) => {
+        if (event.target.classList.contains('model')) {
+            event.target.style.display = 'none'
+        }
+    }
+</script>
+</html>

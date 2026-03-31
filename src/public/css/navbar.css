@@ -1,0 +1,100 @@
+nav {
+    display: flex;
+    height: 60px;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-color: white;
+    box-shadow: 0 0px 6px 0 black;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+
+    transition: 1s;
+}
+.con {
+    width: 100%;
+    height: 25px;
+    background-color: black;
+    display: flex;
+    justify-content: end;
+    border-bottom: 1px solid #ffffff;
+}
+.con img {
+    width: auto;
+    height: 100%;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+body.dark nav {
+    background-color: black;
+    box-shadow: 0 0px 6px 0 rgb(255, 255, 255);
+}
+
+body.dark .nav-item.active {
+    color: white;
+}
+.navbar {
+    display: flex;
+    justify-content: center;
+    width: 40%;
+    height: 90%;
+}
+.nav-item{
+    display: flex;
+    font-size: 30px;
+    font-weight: 900;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    align-items: center;
+    justify-content: center;
+    color: gray;
+
+    position: relative;
+    overflow: hidden;
+
+    transition: 0.3s;
+}
+
+.nav-item.active{
+    color: black;
+}
+.nav-item::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    justify-content: center;
+    width: 0;
+    height: 5px;
+    transition: all 1s ease;
+}
+.nav-item.active::after {
+    width: 100%;
+    background-image: linear-gradient(to right, #6a11cb 0%, #2575fc 100%);
+}
+
+
+@media (max-width: 820px) {
+    .navbar{
+        width: 80%;
+        height: 100%;
+    }
+    .nav-item{
+        font-size: 24px;
+        font-weight: 500;
+    }
+}
+
+@media (max-width: 420px) {
+    .navbar{
+        width: 100%;
+        height: 100%;
+    }
+    .nav-item{
+        font-size: 16px;
+        font-weight: 100;
+    }
+}
