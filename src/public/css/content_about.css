@@ -24,7 +24,7 @@
     width: 650px;
     height: auto;
     padding: 20px;
-    margin-left: 50 px;
+    margin-left: 50px;
 }
 .pro_left div{
     display: flex;
@@ -42,7 +42,8 @@
 }
 .profile img {
     width: 600px;
-    height: 600px;
+    max-width: 100%; /* ใส่เผื่อไว้เสมอ */
+    aspect-ratio: 1 / 1; /* บังคับให้เป็นจัตุรัส 1:1 เสมอ (แทนการล็อค height) */
     object-fit: cover;
 }
 .button_more {
@@ -82,7 +83,7 @@
     }
     .pro_left {
         width: auto;
-        height: 400px;
+        height: auto;
         margin: 0;
         padding: 10px;
     }
@@ -108,7 +109,8 @@
         margin: 0;
     }
     .pro_left {
-        width: 350px;
+        width: 90%; /* ให้กว้างเต็มพื้นที่แทนการล็อคที่ 350px */
+        box-sizing: border-box; /* สำคัญมาก! เพื่อไม่ให้ padding ไปดันขอบจนล้น */
         height: auto;
         margin: 0;
         padding: 10px;

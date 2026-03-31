@@ -93,6 +93,9 @@ body.dark .skill-item {
     .progress-bar-bg {
         height: 30px;
     }
+    .t_text {
+        font-size: 30px;
+    }
     
 }
 
