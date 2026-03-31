@@ -65,7 +65,7 @@
     box-shadow: 0 5px 15px rgba(37, 117, 252, 0.4); /* ใส่เงาสีเดียวกับปุ่ม */
 }
 
-@media (max-width: 820px) {
+@media (max-width: 920px) {
     .about {
         width: auto;
         margin: 40px;
