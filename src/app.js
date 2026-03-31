@@ -19,12 +19,7 @@ app.get("/", (req, res) => {
     ];
     const workData = [
         { id: 1,img: "/image/works/1.png",content: "ระบบ"},
-        { id: 2,},
-        { id: 3,},
-        { id: 4,},
-        { id: 5,},
-        { id: 8,},
-        { id: 8,},
+        { id: 2,img: "/image/works/1.png",content: "ระบบ"},
     ];
   
   // ส่งตัวแปร skillsData ไปที่ไฟล์ index.ejs ในชื่อ "skills"

@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="/css/content_about.css">
     <link rel="stylesheet" href="/css/content_skill.css"> 
     <link rel="stylesheet" href="/css/content_work.css"> 
+    <link rel="stylesheet" href="/css/pixelbat.css"> 
 </head>
 <body>
     <div class="con" id="top-sentinel">
@@ -76,18 +77,22 @@
                 <hr>
             </div>
             <div class="title" id="work">
-                <% works.forEach(w => { %>
-                    <div>
-                        <button onclick="openModel('model-<%= w.id %>')">ID : <%= w.id %></button>
-                    </div>
-                    <div id="model-<%= w.id %>" class="model">
-                        <div>
-                            <span onclick="closeModel('model-<%= w.id %>')" id="closemodel">&times;</span>
-                            <h1><%= w.content %></h1>
-                            <img src="https://i.pinimg.com/236x/31/dc/76/31dc76b88cfba521b6f3836b8f439a03.jpg" alt="">
+                <p class="t_text">ผลงานต่างๆ</p>
+                <div class="w_content">
+                    <% works.forEach(w => { %>
+                        <div class="close work_show" onclick="openModel('model-<%= w.id %>')">
+                            <img src="https://i.pinimg.com/236x/31/dc/76/31dc76b88cfba521b6f3836b8f439a03.jpg" alt="<%= w.content %>">
+                            <p><%= w.content %></p>
                         </div>
-                    </div>
-                <% }) %>
+                        <div id="model-<%= w.id %>" class="model">
+                            <div>
+                                <span onclick="closeModel('model-<%= w.id %>')" id="closemodel">&times;</span>
+                                <p><%= w.content %></p>
+                                <img src="https://i.pinimg.com/236x/31/dc/76/31dc76b88cfba521b6f3836b8f439a03.jpg" alt="">
+                            </div>
+                        </div>
+                    <% }) %>
+                </div>
             </div>
         </div>
         <div class="social-icon">

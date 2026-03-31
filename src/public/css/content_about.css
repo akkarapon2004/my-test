@@ -47,9 +47,6 @@
     object-fit: cover;
 }
 .button_more {
-    /* (ลบขีดเส้นใต้จาก Base Style ด้านบน) */
-
-    /* สีไล่ระดับ (จากสีฟ้าเข้ม ไปสีฟ้าอ่อน) */
     background-image: linear-gradient(to right, #6a11cb 0%, #2575fc 100%);
     color: white;
     padding: 14px 30px;
