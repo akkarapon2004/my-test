@@ -18,7 +18,7 @@ app.get("/", (req, res) => {
         { id: 9, img: "/image/git.png", skill: 50 },
     ];
     const workData = [
-        { id: 1,img: "/image/works/1.png",content: "ระบบเกย์"},
+        { id: 1,img: "/image/works/1.png",content: "ระบบ"},
         { id: 2,},
         { id: 3,},
         { id: 4,},
