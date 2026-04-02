@@ -57,7 +57,8 @@
 }
 
 /* เมื่อเอาเมาส์ไปชี้ (Hover) */
-.button_more:hover {
+.button_more:hover,
+.download-b a:hover {
     /* สลับทิศทางการไล่สี หรือเปลี่ยนสีเพื่อให้ดูมี Interaction */
     background-image: linear-gradient(to right, #2575fc 0%, #6a11cb 100%);
     box-shadow: 0 5px 15px rgba(37, 117, 252, 0.4); /* ใส่เงาสีเดียวกับปุ่ม */

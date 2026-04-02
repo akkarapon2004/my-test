@@ -135,3 +135,41 @@ body.dark .work_show {
         font-size: 40px;
     }
 }
+
+.box-download {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+}
+.download-b {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+.close.show .download-b a{
+    font-size: 30px;
+    font-weight: 900;
+    text-decoration: none;
+    padding: 10px 5px;
+    border-radius: 50px;
+    color: white;
+    background-image: linear-gradient(to right, #6a11cb 0%, #2575fc 100%);
+
+    animation: slideIn2 0.5s ease forwards;
+}
+@keyframes slideIn2 {
+    0% {
+        transform: translateY(50px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+.download-b p{
+    padding: 0;
+    margin: 0;
+    font-size: 14px;
+    color: red;
+}
