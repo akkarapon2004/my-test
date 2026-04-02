@@ -157,7 +157,7 @@ body.dark .work_show {
     color: white;
     background-image: linear-gradient(to right, #6a11cb 0%, #2575fc 100%);
 
-    animation: slideIn2 0.5s ease forwards;
+    animation: slideIn2 0.75s ease forwards;
 }
 @keyframes slideIn2 {
     0% {
