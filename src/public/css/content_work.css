@@ -129,6 +129,9 @@ body.dark .work_show {
     .model div {
         padding: 10px;
     }
-    .work_show {
+    .model span {
+        top: 10px;
+        right: 10px;
+        font-size: 40px;
     }
 }

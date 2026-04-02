@@ -16,8 +16,9 @@
 </head>
 <body>
     <div class="con" id="top-sentinel">
+        <img src="/image/phone.png" alt="">
         <img src="/image/facebook.png" alt="">
-        <img src="/image/social.png" alt="">
+        <img src="/image/line.png" alt="">
     </div>
     <nav>
             <div class="navbar">
@@ -42,16 +43,16 @@
                         <a class="button_more" href="#skill">คลิกเพื่อดูเพิ่มเติม</a>
                     </div>
                     <div class="close pro_right">
-                        <div class="card">
+                        <div class="">
                                 <div class="profile">
                                     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1OlzgzUcujuoLV3mroii91GZNsjySIaXVmw&s" alt="รูปโปรไฟล์">
                                 </div>
-                            
                         </div>
-                        
                     </div>
                 </div>
+                    
             </div>
+            
             <div class="title" id="skill">
                 <hr>
                 <div class="skill-container">
@@ -96,14 +97,31 @@
             </div>
         </div>
         <div class="social-icon">
-            <img src="/image/facebook.png" alt="">
-            <img src="/image/social.png" alt="">
+            <div class="social">
+                <img src="/image/mail.png" alt="">
+            </div>
+            <img class="im" src="/image/line.png" alt="">
+            <img class="im" src="/image/facebook.png" alt="">
+            <img class="im" src="/image/phone.png" alt="">
+            
         </div>
         <img id="theme-toggle" src="/image/full-moon.png" alt="sun">
         
     </div>
 </body>
 <script>
+    const socialBtn = document.querySelector('.social');
+    const socialIconContainer = document.querySelector('.social-icon');
+    const iconimg = socialBtn.querySelector("img");
+    socialBtn.addEventListener('click', () => {
+        socialIconContainer.classList.toggle('active');
+        if (socialIconContainer.classList.contains('active')) {
+            iconimg.src = "/image/X.png";
+        }else{
+            iconimg.src = "/image/mail.png";
+        }
+    });
+
     const theme = document.getElementById("theme-toggle");
 
     theme.addEventListener('click', () => {
@@ -185,6 +203,7 @@
     window.onclick = (event) => {
         if (event.target.classList.contains('model')) {
             event.target.style.display = 'none'
+            document.body.classList.remove("no-scroll");
         }
     }
 </script>

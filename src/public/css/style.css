@@ -90,13 +90,13 @@ body.dark .title {
     opacity: 1;
     visibility: visible;
 }
-.social-icon img {
+.im {
     margin-top: 30px;
     width: 50px;
     cursor: pointer;
     transition: transform 0.7s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
-.social-icon img:hover {
+.im:hover {
     transform: scale(1.1); /* ขยายใหญ่ขึ้นนิดนึง */
 }
 @media (max-width: 920px) {
@@ -108,13 +108,27 @@ body.dark .title {
         width: 100%;
     }
     .social-icon{
+        flex-direction: column-reverse;
         bottom: 100px;
         left: auto;
         right: 50px;
+        align-items: center;
     }
-    .social-icon img {
+    .im {
         margin-top: 10px;
         width: 40px;
+        transform: translateY(170px);
+        opacity: 0;
+        z-index: 0;
+        transition: opacity 0.25s ease-in-out, transform 0.25s ease-in-out !important;
+    }
+    .social {
+        display: flex !important;
+        z-index: 1;
+    }
+    .social-icon.active .im {
+        opacity: 1;
+        transform: translateY(0px) !important;
     }
 }
 
@@ -127,8 +141,19 @@ body.dark .title {
         left: auto;
         right: 30px;
     }
-    .social-icon img {
+        .im {
         margin-top: 20px;
         width: 30px;
     }
+    
+}
+
+.social {
+    display: none;
+    padding-top: 10px;
+    width: 50px;
+}
+.social img{
+    border-radius: 50px;
+    width: 100%;
 }
