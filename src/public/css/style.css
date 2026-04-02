@@ -120,8 +120,11 @@ body.dark .title {
         transform: translateY(170px);
         opacity: 0;
         z-index: 0;
-        pointer-events: none;
+        
         transition: opacity 0.25s ease-in-out, transform 0.25s ease-in-out !important;
+    }
+    .link_social {
+        pointer-events: none !important;
     }
     .social {
         display: flex !important;
@@ -130,6 +133,9 @@ body.dark .title {
     .social-icon.active .im {
         opacity: 1;
         transform: translateY(0px) !important;
+        pointer-events: auto;
+    }
+    .social-icon.active .link_social {
         pointer-events: auto;
     }
 }
