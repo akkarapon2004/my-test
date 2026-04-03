@@ -11,12 +11,11 @@
     <link rel="stylesheet" href="/css/navbar.css">
     <link rel="stylesheet" href="/css/content_about.css">
     <link rel="stylesheet" href="/css/content_skill.css"> 
-    <link rel="stylesheet" href="/css/content_work.css"> 
-    <link rel="stylesheet" href="/css/pixelbat.css"> 
+    <link rel="stylesheet" href="/css/content_work.css">
 </head>
 <body>
     <div class="con" id="top-sentinel">
-        <a href="mailto:akkarapon.ki@rmuti.ac.th"><img src="/image/gmail.png"></a>
+        <a href="mailto:akkarapon2ki@gmail.com"><img src="/image/gmail.png"></a>
         <a href="tel:0647507253"><img src="/image/phone.png" alt=""></a>
         <a href="https://www.facebook.com/akkarapon.kittipat"><img src="/image/facebook.png" alt=""></a>
         <a href="https://line.me/ti/p/c1fc7g7wyf"><img src="/image/line.png" alt=""></a>
@@ -35,17 +34,19 @@
             <div class="title" id="about">
                 <div class="about">
                     <div class="close pro_left">
+                        <div>
+                            <p class="typewriter">อัครพล กิตติภัทฑ์</p>
+                            <p style="font-size: 14px; margin: 0; padding: 0; font-weight: bold;" >สนใจตำแหน่งงาน (Web Developer, Programer, IT Support)</p>
+                        </div>
+                            
                         
-                            <p style="font-size: 30px; margin: 0; padding: 0;" >ผมชื่อ</p>
-                            <p class="typewriter">คุณ sea sea</p>
-                        
-                        <p>HHHHHHHHHHHHHHHHH HHHHHHHHHHHHHHHHHHHHHHHHHH HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh hhhhhhhhhhhhhhhhhhhhhh HH</p>
+                        <p>“ผมเป็นเด็กรุ่นใหม่ที่มีความหลงใหลในการเขียนโปรแกรมและการพัฒนาเว็บไซต์ มีทักษะความเชี่ยวชาญภาษา JavaScript และ Python  พร้อมที่จะเรียนรู้ และพัฒนาทักษะใหม่ๆเสมอ”</p>
                         <a class="button_more" href="#skill">คลิกเพื่อดูเพิ่มเติม</a>
                     </div>
                     <div class="close pro_right">
                         <div class="">
                                 <div class="profile">
-                                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1OlzgzUcujuoLV3mroii91GZNsjySIaXVmw&s" alt="รูปโปรไฟล์">
+                                    <img src="/image/รูปโปรไฟล์.png" alt="รูปโปรไฟล์">
                                 </div>
                         </div>
                     </div>
@@ -82,14 +83,17 @@
                 <div class="w_content">
                     <% works.forEach(w => { %>
                         <div class="close work_show" onclick="openModel('model-<%= w.id %>')">
-                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1OlzgzUcujuoLV3mroii91GZNsjySIaXVmw&s" alt="<%= w.content %>">
-                            <p><%= w.content %></p>
+                            <img src="<%= w.img %>" alt="<%= w.title %>">
+                            <p><%= w.title %></p>
                         </div>
                         <div id="model-<%= w.id %>" class="model">
-                            <div>
+                            <div class="box-work">
                                 <span onclick="closeModel('model-<%= w.id %>')" id="closemodel">&times;</span>
-                                <p><%= w.content %></p>
-                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1OlzgzUcujuoLV3mroii91GZNsjySIaXVmw&s" alt="">
+                                <div class="work_title">
+                                    <p><%= w.title %></p>
+                                </div>
+                                <img src="<%= w.img %>" alt="<%= w.title %>">
+                                <p>“<%= w.content %>”</p>
                             </div>
                         </div>
                     <% }) %>
@@ -111,7 +115,7 @@
             <a class="link_social" href="https://line.me/ti/p/c1fc7g7wyf"><img class="im" src="/image/line.png" alt=""></a>
             <a class="link_social" href="https://www.facebook.com/akkarapon.kittipat"><img class="im" src="/image/facebook.png" alt=""></a>
             <a class="link_social" href="tel:0647507253"><img class="im" src="/image/phone.png" alt=""></a>
-            <a class="link_social" href="mailto:akkarapon.ki@rmuti.ac.th" title="ส่งอีเมลหาเรา"><img class="im" src="/image/gmail.png"></a>
+            <a class="link_social" href="mailto:akkarapon2ki@gmail.com" title="ส่งอีเมลหาเรา"><img class="im" src="/image/gmail.png"></a>
         </div>
         <img id="theme-toggle" src="/image/full-moon.png" alt="sun">
         
